@@ -1,0 +1,112 @@
+@font-face {
+    font-family: 'lobster';
+    src: url(fonts/Lobster-Regular.ttf);
+}
+@font-face {
+    font-family: 'Montserrat light';
+    src: url(fonts/Montserrat-Light.ttf);
+}
+/*Carousel*/
+body{
+    margin: 0;
+    padding: 0;
+    background: #0024ff;
+}
+.carousel{
+    display: grid;
+    place-items: center;
+}
+.slider{
+    background: #fff;
+    height: 300px;
+    margin: auto;
+    position: relative;
+    width: 100%;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+}
+.slide-track{
+    display: flex;
+    width: calc(250px * 18);
+    /*animation: scroll 60s linear infinite;/*Scroll Time*/
+}
+.slide-track:hover{
+    animation-play-state: paused;
+}
+/*Auto Scroll*/
+@keyframes scroll{
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-250px * 9));
+    }
+}
+/*Fin Auto Scroll*/
+.slide{
+    height: 200px;
+    width: 250px;
+    display: flex;
+    align-items: center;
+    font-family: 'Montserrat light';
+    font-weight: bold;
+    color: #474747;
+    padding: 5px;
+    perspective: 100px;
+}
+.slide img{
+    width: 100%;
+    transition: transform 1s;
+}
+/*img:hover{
+    transform: translateZ(20px); *Agrandi l'image*
+}*/
+.popup {
+    position: absolute;
+    top: 99%;
+    right: 38%;
+    width: 200px;
+    text-align: center;
+    /* transform: translate(-50%, -50%); */
+    padding: 20px;
+    visibility: visible;
+    opacity: 1;/*Changer la valeur pour que le texte sois visible tout le temps*/
+    transition: visibility 0s, opacity 0.5s ease-in-out;
+    }
+    
+    .slide:hover .popup, .slide:hover .popup2, .slide:hover .popup3 {
+    visibility: visible;
+    opacity: 1;
+    }
+.popup2 {
+    position: absolute;
+    top: -28%;
+    right: 32%;
+    width: 200px;
+    text-align: center;
+    font-size: 16px; 
+    /* transform: translate(-50%, -50%); */
+    padding: 20px;
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); */
+    visibility: visible;
+    opacity: 1;
+    transition: visibility 0s, opacity 0.5s ease-in-out;
+    }
+.popup3 {
+    position: absolute;
+    top: 114%;
+    left: 78%;
+    width: 200px;
+    text-align: center;
+    font-size: 13px; 
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); */
+    visibility: visible;
+    opacity: 1;
+    transition: visibility 0s, opacity 0.5s ease-in-out;
+    }
+/*Fin Carousel*/
+
+  
